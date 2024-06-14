@@ -87,7 +87,7 @@ st.header("Data Frame📈")
 st.write("[> Accessing our original dataset <](https://www.kaggle.com/code/tanshihjen/eda-statistical-analysis-smoking-dataset-from-uk)")
 st.caption("Or you can view the dataset here:")
 
-df = pd.read_csv('C:/Users/asus/Downloads/smoking(1).csv')
+df = pd.read_csv('smoking(2).csv')
 
 st.dataframe(df)
 '''
@@ -106,7 +106,7 @@ st.subheader("Group 16 - Business IT 2")
 st.header("SMOKING ANALYSIS COLLECTION")
 st.write("💞 Let's discover our graphs below with us 💞")
 
-data = pd.read_csv('C:/Users/asus/Downloads/smoking(1).csv')
+data = pd.read_csv('smoking(2).csv')
 
 # Initial 2 tabs for each interactive graph
 tab1, tab2, tab3 = st.tabs(["Line Chart", "Bar Chart", "Horizontal Chart"])
