@@ -10,7 +10,7 @@ st.subheader("Group 16 - Business IT 2")
 st.title("SMOKING ANALYSIS COLLECTION")
 st.write("💞 Let's discover our graphs below with us 💞")
 
-data = pd.read_csv('C:/Users/asus/Downloads/smoking(1).csv')
+data = pd.read_csv('smoking(2).csv')
 
 # Initial 2 tabs for each interactive graph
 tab1, tab2, tab3 = st.tabs(["Line Chart", "Bar Chart", "Horizontal Chart"])
