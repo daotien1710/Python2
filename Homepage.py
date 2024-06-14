@@ -66,6 +66,6 @@ st.header("Data Frame📈")
 st.write("[> Accessing our original dataset <](https://www.kaggle.com/code/tanshihjen/eda-statistical-analysis-smoking-dataset-from-uk)")
 st.caption("Or you can view the dataset here:")
 
-df = pd.read_csv('/C:/Users/asus/Downloads/smoking(2).csv')
+df = pd.read_csv('smoking(2).csv')
 
 st.dataframe(df)
