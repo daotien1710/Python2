@@ -6,7 +6,19 @@ import plotly as pl
 from streamlit_extras.stoggle import stoggle
 # Set the page configuration
 st.set_page_config(page_title = "Project Python 2", page_icon = "💫", layout="wide")
-
+st.markdown(
+    """
+    <style>
+    .sidebar .sidebar-content {
+        background-color: #9dff7a;  /* Sidebar background color */
+    }
+    .stText {
+        color: #000000;  /* Color used for almost all text */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.subheader("Group 16 - Business IT 2")
 st.title("HI! WELCOME TO OUR DATASET :wave:")
 st.write("We are a group of business students who are interested in the UK resident' smoking habits. Therefore, we decided to analyze a set of data about the smoking fluctuation in the UK between male and female smokers across different areas, such as age, region, etc. Through this visualization, we hope to bring a clear vision to people about which region has the largest of smokers and which type of cigarettes is the most favourable.")
