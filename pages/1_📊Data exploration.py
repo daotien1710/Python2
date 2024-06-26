@@ -16,7 +16,7 @@ data = pd.read_csv('smoking(2).csv')
 tab1, tab2, tab3 = st.tabs(["Line Chart", "Bar Chart", "Horizontal Chart"])
 
 ### TAB 1: LINE CHART
-tab1.subheader("👨‍💻Types of cigarettes consumed by various marital status")
+tab1.subheader("👨‍💻Types of Cigarettes Consumed by Various Marital Status")
 
 # Define color palette for the lines
 color1 = ["#19376D", "#66347F", "#FB2576"]
