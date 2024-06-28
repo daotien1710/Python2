@@ -57,7 +57,7 @@ fig = px.line(
     markers=True,
     title="Types of cigarettes consumed by various marital status",
     labels={"marital_status": "Marital Status", "count": ""},
-    color_discrete_sequence=color1, 
+    color_discrete_sequence=[color1[type] for type in filtered_data1['type'].unique()], 
     hover_data={"marital_status": False, "type": False, "count": True})
 
 fig.update_traces(hovertemplate='%{y}')
