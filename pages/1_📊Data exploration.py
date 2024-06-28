@@ -44,20 +44,24 @@ if both_mainly_packets:
 # Apply the filter to the DataFrame
 filtered_data1 = data1[data1['type'].isin(selected_types)]
 
-# Create the line plots
-g = sns.FacetGrid(filtered_data1, col="type", hue="type", sharey=False, height=5, aspect=1.5, col_wrap=1, legend_out=False)
-g.map(sns.lineplot, "marital_status", "count", marker="o")
-for ax in g.axes.flat:
-    for label in ax.get_xticklabels():
-        label.set_horizontalalignment('right')
+# Create the line plot using plotly.express
+fig = px.line(
+    filtered_data1,
+    x="marital_status",
+    y="count",
+    color="type",
+    markers=True,
+    title="Types of cigarettes consumed by various marital status",
+    labels={"marital_status": "Marital Status", "count": "Count"}
+)
 
-# Add titles and labels
-g.set_axis_labels("Marital status", "Count")
-g.set_titles(col_template="{col_name}", row_template="{row_name}")
-
-g.fig.set_figwidth(13)
-# Display the plot in Streamlit
-tab1.pyplot(g.fig)
+# Update layout to adjust the size
+fig.update_layout(
+    autosize=False,
+    width=800,
+    height=600,
+    legend_title_text='Cigarette Type'
+)
 
 ### TAB 2: BAR CHART
 tab2.subheader("Smoking Status Plot Based on Gross Income in the UK")
