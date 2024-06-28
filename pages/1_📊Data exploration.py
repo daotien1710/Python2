@@ -62,6 +62,8 @@ fig.update_layout(
     height=600,
     legend_title_text='Cigarette Type'
 )
+# Display the plot in Streamlit
+tab1.plotly_chart(fig)
 
 ### TAB 2: BAR CHART
 tab2.subheader("Smoking Status Plot Based on Gross Income in the UK")
