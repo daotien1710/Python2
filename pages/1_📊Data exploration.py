@@ -51,15 +51,14 @@ fig = px.line(
     y="count",
     color="type",
     markers=True,
-    title="Types of cigarettes consumed by various marital status",
-    labels={"marital_status": "Marital Status", "count": "Count"}
-)
+    title="Types of cigarettes consumed by various marital status")
 
 # Update layout to adjust the size
 fig.update_layout(
     autosize=False,
     width=800,
     height=600,
+    showlegend=False,
     legend_title_text='Cigarette Type'
 )
 # Display the plot in Streamlit
