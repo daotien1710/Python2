@@ -54,7 +54,7 @@ fig = px.line(
     title="Types of cigarettes consumed by various marital status",
     labels={"marital_status": "Marital Status", "count": ""},
     hover_data={"marital_status": False, "type": False, "count": True})
-
+fig.update_traces(hovertemplate='%{y}')
 # Update layout to adjust the size
 fig.update_layout(
     autosize=False,
