@@ -18,21 +18,17 @@ tab1, tab2, tab3 = st.tabs(["Line Chart", "Bar Chart", "Horizontal Chart"])
 ### TAB 1: LINE CHART
 tab1.subheader("👨‍💻Types of Cigarettes Consumed by Various Marital Status")
 
+# Define color palette for the lines
+color1 = [{
+    'Packets': '#ff0000',   
+    'Hand-Rolled': '#0000ff',  
+    'Both/Mainly Packets': '#008000'  }
 
 # Filtering the data based on region and type
 data1 = data.query("region not in ['Midlands & East Anglia', 'The North', 'Wales'] and type not in ['NA', 'Both/Mainly Hand-Rolled']")
 
 # Grouping the data
 data1 = data1.groupby(['marital_status', 'type']).size().reset_index(name='count')
-
-# Define colors for each type
-color_map = {
-    'Packets': '#ff0000',   # Red for Packets
-    'Hand-Rolled': '#0000ff',  # Blue for Hand-Rolled
-    'Both/Mainly Packets': '#008000'  # Green for Both/Mainly Packets
-}
-# Map the colors to the 'type' column in the DataFrame
-data1['color'] = data1['type'].map(color_map)
 
 # Create checkboxes for each type of cigarette
 packets = tab1.checkbox("Packets", value=True)
@@ -60,7 +56,7 @@ fig = px.line(
     markers=True,
     title="Types of cigarettes consumed by various marital status",
     labels={"marital_status": "Marital Status", "count": ""},
-    color_discrete_sequence=filtered_data1['color'], 
+    color_discrete_sequence=color1, 
     hover_data={"marital_status": False, "type": False, "count": True})
 
 fig.update_traces(hovertemplate='%{y}')
