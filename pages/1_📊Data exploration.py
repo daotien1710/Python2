@@ -22,7 +22,7 @@ tab1.subheader("👨‍💻Types of Cigarettes Consumed by Various Marital Statu
 color1 = {
     'Packets': '#ff0000',   
     'Hand-Rolled': '#0000ff',  
-    'Both/Mainly Packets': '#008000'  }
+    'Both/Mainly Packets': '#008000'}
 
 # Filtering the data based on region and type
 data1 = data.query("region not in ['Midlands & East Anglia', 'The North', 'Wales'] and type not in ['NA', 'Both/Mainly Hand-Rolled']")
