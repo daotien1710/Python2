@@ -70,7 +70,7 @@ fig.update_layout(
     showlegend=False,
     legend_title_text='Cigarette Type',
     title_text="Types of cigarettes consumed by various marital status",
-    title_x=0.5 
+    title_x=0.25 
 )
 # Display the plot in Streamlit
 tab1.plotly_chart(fig)
