@@ -55,7 +55,7 @@ fig = px.line(
     y="count",
     color="type",
     markers=True,
-    title="Types of cigarettes consumed by various marital status",
+    title={"Types of cigarettes consumed by various marital status", 'x': 0.5}
     labels={"marital_status": "Marital Status", "count": ""},
     color_discrete_sequence=[color1[type] for type in filtered_data1['type'].unique()], 
     hover_data={"marital_status": False, "type": False, "count": True})
@@ -68,8 +68,7 @@ fig.update_layout(
     width=800,
     height=600,
     showlegend=False,
-    legend_title_text='Cigarette Type',
-    'x': 0.5
+    legend_title_text='Cigarette Type'
 )
 # Display the plot in Streamlit
 tab1.plotly_chart(fig)
