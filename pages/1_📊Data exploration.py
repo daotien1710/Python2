@@ -68,7 +68,8 @@ fig.update_layout(
     width=800,
     height=600,
     showlegend=False,
-    legend_title_text='Cigarette Type'
+    legend_title_text='Cigarette Type',
+    'x': 0.5
 )
 # Display the plot in Streamlit
 tab1.plotly_chart(fig)
