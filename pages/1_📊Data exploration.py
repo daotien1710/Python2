@@ -19,7 +19,7 @@ tab1, tab2, tab3 = st.tabs(["Line Chart", "Bar Chart", "Horizontal Chart"])
 tab1.subheader("👨‍💻Types of Cigarettes Consumed by Various Marital Status")
 
 # Define color palette for the lines
-color1 = [{
+color1 = {
     'Packets': '#ff0000',   
     'Hand-Rolled': '#0000ff',  
     'Both/Mainly Packets': '#008000'  }
