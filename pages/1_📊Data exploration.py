@@ -52,7 +52,7 @@ fig = px.line(
     color="type",
     markers=True,
     title="Types of cigarettes consumed by various marital status",
-    labels={"marital_status": "Marital Status", "count": "Count"},
+    labels={"marital_status": "Marital Status", "count": ""},
     hover_data={"marital_status": False, "type": False, "count": True})
 
 # Update layout to adjust the size
