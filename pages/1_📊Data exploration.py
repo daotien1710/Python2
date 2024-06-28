@@ -19,7 +19,7 @@ tab1, tab2, tab3 = st.tabs(["Line Chart", "Bar Chart", "Horizontal Chart"])
 tab1.subheader("👨‍💻Types of Cigarettes Consumed by Various Marital Status")
 
 # Define color palette for the lines
-color1 = ["#19376D", "#66347F", "#7c8c49"]
+color1 = ['#ff0000', '#0000ff', '#008000']
 
 # Filtering the data based on region and type
 data1 = data.query("region not in ['Midlands & East Anglia', 'The North', 'Wales'] and type not in ['NA', 'Both/Mainly Hand-Rolled']")
