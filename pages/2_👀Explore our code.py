@@ -112,10 +112,14 @@ data = pd.read_csv('smoking(2).csv')
 tab1, tab2, tab3 = st.tabs(["Line Chart", "Bar Chart", "Horizontal Chart"])
 
 ### TAB 1: LINE CHART
-tab1.subheader("👨‍💻Types of cigarettes consumed by various marital status")
+tab1.subheader("👨‍💻Types of Cigarettes Consumed by Various Marital Status")
 
 # Define color palette for the lines
-color1 = ["#19376D", "#66347F", "#FB2576"]
+color1 = {
+    'Packets': '#ff0000',   
+    'Hand-Rolled': '#0000ff',  
+    'Both/Mainly Packets': '#008000'
+}
 
 # Filtering the data based on region and type
 data1 = data.query("region not in ['Midlands & East Anglia', 'The North', 'Wales'] and type not in ['NA', 'Both/Mainly Hand-Rolled']")
@@ -140,20 +144,32 @@ if both_mainly_packets:
 # Apply the filter to the DataFrame
 filtered_data1 = data1[data1['type'].isin(selected_types)]
 
-# Create the line plots
-g = sns.FacetGrid(filtered_data1, col="type", hue="type", sharey=False, height=5, aspect=1.5, col_wrap=1, legend_out=False)
-g.map(sns.lineplot, "marital_status", "count", marker="o")
-for ax in g.axes.flat:
-    for label in ax.get_xticklabels():
-        label.set_horizontalalignment('right')
+# Create the line plot using plotly.express
+fig = px.line(
+    filtered_data1,
+    x="marital_status",
+    y="count",
+    color="type",
+    markers=True,
+    title="Types of cigarettes consumed by various marital status",
+    labels={"marital_status": "Marital Status", "count": ""},
+    color_discrete_sequence=[color1[type] for type in filtered_data1['type'].unique()], 
+    hover_data={"marital_status": False, "type": False, "count": True})
 
-# Add titles and labels
-g.set_axis_labels("Marital status", "Count")
-g.set_titles(col_template="{col_name}", row_template="{row_name}")
+fig.update_traces(hovertemplate='%{y}')
 
-g.fig.set_figwidth(13)
+# Update layout to adjust the size
+fig.update_layout(
+    autosize=False,
+    width=800,
+    height=600,
+    showlegend=False,
+    legend_title_text='Cigarette Type',
+    title_text="Types of cigarettes consumed by various marital status",
+    title_x=0.25 
+)
 # Display the plot in Streamlit
-tab1.pyplot(g.fig)
+tab1.plotly_chart(fig)
 
 ### TAB 2: BAR CHART
 tab2.subheader("Smoking Status Plot Based on Gross Income in the UK")
