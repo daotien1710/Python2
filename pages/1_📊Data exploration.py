@@ -16,7 +16,7 @@ data = pd.read_csv('smoking(2).csv')
 tab1, tab2, tab3 = st.tabs(["Line Chart", "Bar Chart", "Horizontal Chart"])
 
 ### TAB 1: LINE CHART
-tab1.subheader("👨‍💻Types of Cigarettes Consumed by Various Marital Status")
+tab1.subheader("👨‍💻 Types of Cigarettes Consumed by Various Marital Status")
 
 # Define color palette for the lines
 color1 = {
@@ -76,7 +76,7 @@ fig.update_layout(
 tab1.plotly_chart(fig)
 
 ### TAB 2: BAR CHART
-tab2.subheader("Smoking Status Plot Based on Gross Income in the UK")
+tab2.subheader("👨‍💻 Smoking Status Plot Based on Gross Income in the UK")
 
 # Filter out rows with 'Refused' and 'Unknown' in 'gross_income'
 data2 = data[~data['gross_income'].isin(['Refused', 'Unknown'])]
@@ -138,7 +138,7 @@ plt.gca().title.set_position([.5, 1.05])
 tab2.pyplot(plt)
 
 ###TAB 3: HORIZONTAL CHART
-tab3.subheader("Weekly Cigarette Consumption by Education Levels")
+tab3.subheader("👨‍💻 Weekly Cigarette Consumption by Education Levels")
 # Ensure 'amt_weekends' is positive
 data['amt_weekends'] = data['amt_weekends'].abs()
 
